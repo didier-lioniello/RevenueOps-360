@@ -3,8 +3,7 @@
 [![CI](https://github.com/didier-lioniello/RevenueOps-360/actions/workflows/ci.yml/badge.svg)](https://github.com/didier-lioniello/RevenueOps-360/actions/workflows/ci.yml)
 [![Pages](https://github.com/didier-lioniello/RevenueOps-360/actions/workflows/pages.yml/badge.svg)](https://github.com/didier-lioniello/RevenueOps-360/actions/workflows/pages.yml)
 
-[Live synthetic dashboard](https://didier-lioniello.github.io/RevenueOps-360/) — available after
-GitHub Pages is enabled with **GitHub Actions** as its source and the first `main` deployment passes.
+[Open the live synthetic dashboard](https://didier-lioniello.github.io/RevenueOps-360/).
 
 > **SYNTHETIC DATA · DEMONSTRATION ONLY**
 > The bundled fixture contains no customer, company, or personal data. No LLM. No client promise.
