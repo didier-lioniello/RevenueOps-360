@@ -1,0 +1,495 @@
+{
+  "dataset": {
+    "currency": "EUR",
+    "dataset_id": "synthetic-b2b-revenue-v1",
+    "label": "SYNTHETIC DATA — fictional B2B revenue operations demonstration",
+    "period_end": "2025-12-31",
+    "period_start": "2025-01-01",
+    "synthetic": true
+  },
+  "disclaimers": [
+    "Input is operator-attested as synthetic; this report does not verify that claim.",
+    "The synthetic marker is an operator attestation, not PII detection; never use real exports.",
+    "Outputs are deterministic arithmetic, not AI-generated advice or a customer promise.",
+    "Forecasts use supplied categories and probabilities; scenarios do not establish causality.",
+    "This reference implementation is not production-ready and is not financial advice."
+  ],
+  "metrics": {
+    "forecast": {
+      "actual": 390000.0,
+      "attainment": {
+        "actual": 0.4875,
+        "best_case": 0.8562,
+        "commit": 0.7562,
+        "weighted": 0.7591
+      },
+      "best_case": 685000.0,
+      "commit": 605000.0,
+      "formula_notes": {
+        "best_case": "actual + in-period commit + in-period best_case ACV",
+        "commit": "actual + full ACV of in-period commit opportunities",
+        "weighted": "actual + sum(in-period open ACV * probability)"
+      },
+      "gaps_to_target": {
+        "actual": 410000.0,
+        "best_case": 115000.0,
+        "commit": 195000.0,
+        "weighted": 192750.0
+      },
+      "target": 800000.0,
+      "weighted": 607250.0
+    },
+    "funnel": {
+      "formula": "next_stage_count / previous_stage_count",
+      "overall_conversion": 0.015,
+      "stages": [
+        {
+          "conversion_from_previous": null,
+          "count": 400,
+          "stage": "Lead"
+        },
+        {
+          "conversion_from_previous": 0.4,
+          "count": 160,
+          "stage": "MQL"
+        },
+        {
+          "conversion_from_previous": 0.5,
+          "count": 80,
+          "stage": "SQL"
+        },
+        {
+          "conversion_from_previous": 0.25,
+          "count": 20,
+          "stage": "Opportunity"
+        },
+        {
+          "conversion_from_previous": 0.3,
+          "count": 6,
+          "stage": "Won"
+        }
+      ]
+    },
+    "marketing": {
+      "attributed_gross_profit": 304200.0,
+      "attributed_revenue": 390000.0,
+      "attribution_model": "synthetic first-touch marketing_source",
+      "channels": [
+        {
+          "attributed_gross_profit": 93600.0,
+          "attributed_revenue": 120000.0,
+          "channel": "Paid Search",
+          "channel_cac": 25000.0,
+          "cost_per_lead": 384.62,
+          "leads": 130,
+          "opportunities": 6,
+          "roas": 2.4,
+          "roi": 0.872,
+          "roi_unavailable_reason": null,
+          "spend": 50000.0,
+          "won_deals": 2
+        },
+        {
+          "attributed_gross_profit": 88920.0,
+          "attributed_revenue": 114000.0,
+          "channel": "Content",
+          "channel_cac": 17500.0,
+          "cost_per_lead": 291.67,
+          "leads": 120,
+          "opportunities": 6,
+          "roas": 3.2571,
+          "roi": 1.5406,
+          "roi_unavailable_reason": null,
+          "spend": 35000.0,
+          "won_deals": 2
+        },
+        {
+          "attributed_gross_profit": 51480.0,
+          "attributed_revenue": 66000.0,
+          "channel": "Events",
+          "channel_cac": 60000.0,
+          "cost_per_lead": 750.0,
+          "leads": 80,
+          "opportunities": 4,
+          "roas": 1.1,
+          "roi": -0.142,
+          "roi_unavailable_reason": null,
+          "spend": 60000.0,
+          "won_deals": 1
+        },
+        {
+          "attributed_gross_profit": 70200.0,
+          "attributed_revenue": 90000.0,
+          "channel": "Partners",
+          "channel_cac": 30000.0,
+          "cost_per_lead": 428.57,
+          "leads": 70,
+          "opportunities": 4,
+          "roas": 3.0,
+          "roi": 1.34,
+          "roi_unavailable_reason": null,
+          "spend": 30000.0,
+          "won_deals": 1
+        }
+      ],
+      "cost_per_lead": 437.5,
+      "formula": "ROI = (closed-won attributed ACV * gross margin rate - channel spend) / channel spend",
+      "gross_margin_rate": 0.78,
+      "marketing_cac": 29166.67,
+      "roas": 2.2286,
+      "roi": 0.7383,
+      "roi_unavailable_reason": null,
+      "total_spend": 175000.0
+    },
+    "pipeline": {
+      "all_open_pipeline": 365000.0,
+      "coverage": 0.7195,
+      "coverage_gap_amount": 935000.0,
+      "coverage_status": "measured",
+      "coverage_target": 3.0,
+      "formula": "in_period_open_pipeline / max(target - actual, 0)",
+      "in_period_open_deals": 3,
+      "in_period_open_pipeline": 295000.0,
+      "out_of_period_open_pipeline": 70000.0,
+      "remaining_target": 410000.0
+    },
+    "sales": {
+      "average_contract_value": 65000.0,
+      "average_sales_cycle_days": 77.75,
+      "closed_won_revenue": 390000.0,
+      "formulas": {
+        "average_contract_value": "closed_won_revenue / won_deals",
+        "sales_cycle": "mean(close_date - created_date) across closed deals",
+        "sales_velocity": "funnel opportunities * opportunity-to-won rate * ACV / cycle",
+        "win_rate": "won / (won + lost)"
+      },
+      "lost_deals": 10,
+      "median_sales_cycle_days": 72.5,
+      "open_deals": 4,
+      "sales_velocity_opportunity_to_won_rate": 0.3,
+      "sales_velocity_per_day": 5016.08,
+      "win_rate": 0.375,
+      "won_deals": 6
+    },
+    "unit_economics": {
+      "annual_logo_churn_rate": 0.14,
+      "blended_cac": 47500.0,
+      "cac_payback_months": 11.24,
+      "estimated_ltv": 362142.86,
+      "formula_notes": {
+        "blended_cac": "(marketing spend + sales acquisition spend) / new customers",
+        "cac_payback": "blended CAC / (ACV * gross margin / 12)",
+        "estimated_ltv": "ACV * gross margin / annual logo churn",
+        "ltv_to_cac": "estimated LTV / blended CAC"
+      },
+      "gross_margin_rate": 0.78,
+      "ltv_to_cac": 7.62,
+      "marketing_spend": 175000.0,
+      "new_customers": 6,
+      "sales_acquisition_spend": 110000.0,
+      "total_acquisition_spend": 285000.0,
+      "unavailable_reasons": []
+    }
+  },
+  "recommendations": [
+    {
+      "action": "Separate the gap into pipeline creation, deal progression, and ACV experiments; assign an owner and review date to each assumption.",
+      "engine": "deterministic-threshold-rules-v1",
+      "evidence": [
+        {
+          "comparison": "> 0",
+          "metric": "weighted_gap_to_target",
+          "source": "metrics.forecast.gaps_to_target.weighted",
+          "value": 192750.0
+        }
+      ],
+      "finding": "The probability-weighted in-period forecast remains below the synthetic target.",
+      "priority": "high",
+      "rule_id": "FORECAST_WEIGHTED_GAP",
+      "title": "Build a quantified target-gap plan"
+    },
+    {
+      "action": "Audit stage-entry criteria and test source-specific pipeline creation against the measured coverage gap; do not count out-of-period deals as current coverage.",
+      "engine": "deterministic-threshold-rules-v1",
+      "evidence": [
+        {
+          "comparison": "< target 3.0",
+          "metric": "pipeline_coverage",
+          "source": "metrics.pipeline.coverage",
+          "value": 0.7195
+        },
+        {
+          "comparison": "> 0",
+          "metric": "coverage_gap_amount",
+          "source": "metrics.pipeline.coverage_gap_amount",
+          "value": 935000.0
+        }
+      ],
+      "finding": "Open pipeline expected inside the reporting period is below the configured coverage multiple.",
+      "priority": "high",
+      "rule_id": "PIPELINE_COVERAGE_SHORTFALL",
+      "title": "Increase qualified in-period coverage"
+    },
+    {
+      "action": "Validate attribution, gross margin, and downstream quality, then cap, redesign, or retest the channel before increasing its budget.",
+      "engine": "deterministic-threshold-rules-v1",
+      "evidence": [
+        {
+          "comparison": "< 0.20 rule threshold",
+          "metric": "channel_roi",
+          "source": "metrics.marketing.channels[2].roi",
+          "value": -0.142
+        },
+        {
+          "comparison": "applied to attributed ACV",
+          "metric": "gross_margin_rate",
+          "source": "metrics.marketing.gross_margin_rate",
+          "value": 0.78
+        }
+      ],
+      "finding": "Attributed gross profit produces less than 20% ROI over synthetic channel spend.",
+      "priority": "medium",
+      "rule_id": "CHANNEL_ROI_EVENTS",
+      "title": "Review Events economics before adding spend"
+    },
+    {
+      "action": "Review entry/exit definitions, loss reasons, response time, and enablement at this handoff; run one controlled change before scaling spend.",
+      "engine": "deterministic-threshold-rules-v1",
+      "evidence": [
+        {
+          "comparison": "< 0.35 rule threshold",
+          "metric": "stage_conversion",
+          "source": "metrics.funnel.stages[3].conversion_from_previous",
+          "value": 0.25
+        }
+      ],
+      "finding": "This is the lowest observed stage-to-stage conversion in the synthetic funnel.",
+      "priority": "medium",
+      "rule_id": "FUNNEL_WEAKEST_STAGE",
+      "title": "Instrument the SQL → Opportunity handoff"
+    },
+    {
+      "action": "Segment cycle time by stage and outcome, then test one reversible intervention such as mutual action plans or earlier technical validation.",
+      "engine": "deterministic-threshold-rules-v1",
+      "evidence": [
+        {
+          "comparison": "> 75 days",
+          "metric": "average_sales_cycle_days",
+          "source": "metrics.sales.average_sales_cycle_days",
+          "value": 77.75
+        }
+      ],
+      "finding": "The observed closed-deal cycle exceeds the rule's 75-day review threshold.",
+      "priority": "medium",
+      "rule_id": "SALES_CYCLE_REVIEW",
+      "title": "Test one cycle-time constraint"
+    },
+    {
+      "action": "Use the scenario to rank assumptions, then require operational evidence before adopting any conversion, ACV, spend, or cycle change in a plan.",
+      "engine": "deterministic-threshold-rules-v1",
+      "evidence": [
+        {
+          "comparison": "< 1.0",
+          "metric": "modeled_target_attainment",
+          "source": "scenario.modeled.target_attainment",
+          "value": 0.7312
+        }
+      ],
+      "finding": "Even the configured arithmetic scenario remains below full target attainment.",
+      "priority": "low",
+      "rule_id": "SCENARIO_TARGET_GAP",
+      "title": "Treat the scenario as sensitivity, not a plan"
+    }
+  ],
+  "report_version": "1.0",
+  "scenario": {
+    "assumptions": [
+      "Marketing lead volume changes linearly with marketing spend.",
+      "The conversion change is relative and applied to every stage, capped at 100%.",
+      "ACV and cycle changes are relative to observed synthetic baselines.",
+      "Marketing ROI uses attributed modeled ACV multiplied by gross margin before spend.",
+      "Fractional modeled deals are expected-value planning units, not customer promises.",
+      "No causal effect is inferred; the scenario is arithmetic sensitivity analysis."
+    ],
+    "baseline": {
+      "acv": 65000.0,
+      "attributed_gross_profit": 304200.0,
+      "available": true,
+      "blended_cac": 47500.0,
+      "cac_payback_months": 11.24,
+      "cycle_days": 77.75,
+      "estimated_ltv": 362142.86,
+      "ltv_to_cac": 7.62,
+      "marketing_roi": 0.7383,
+      "marketing_roi_unavailable_reason": null,
+      "marketing_spend": 175000.0,
+      "modeled_opportunities": 20.0,
+      "modeled_revenue": 390000.0,
+      "modeled_win_rate": 0.3,
+      "modeled_wins": 6.0,
+      "sales_velocity_per_day": 5016.08,
+      "stage_conversions": [
+        {
+          "from": "Lead",
+          "modeled_conversion": 0.4,
+          "to": "MQL"
+        },
+        {
+          "from": "MQL",
+          "modeled_conversion": 0.5,
+          "to": "SQL"
+        },
+        {
+          "from": "SQL",
+          "modeled_conversion": 0.25,
+          "to": "Opportunity"
+        },
+        {
+          "from": "Opportunity",
+          "modeled_conversion": 0.3,
+          "to": "Won"
+        }
+      ],
+      "stage_counts": [
+        {
+          "modeled_count": 400.0,
+          "stage": "Lead"
+        },
+        {
+          "modeled_count": 160.0,
+          "stage": "MQL"
+        },
+        {
+          "modeled_count": 80.0,
+          "stage": "SQL"
+        },
+        {
+          "modeled_count": 20.0,
+          "stage": "Opportunity"
+        },
+        {
+          "modeled_count": 6.0,
+          "stage": "Won"
+        }
+      ],
+      "target_attainment": 0.4875
+    },
+    "delta": {
+      "acv": {
+        "absolute": 3250.0,
+        "relative_pct": 5.0
+      },
+      "blended_cac": {
+        "absolute": -13227.77,
+        "relative_pct": -27.85
+      },
+      "cac_payback_months": {
+        "absolute": -3.51,
+        "relative_pct": -31.23
+      },
+      "cycle_days": {
+        "absolute": -7.77,
+        "relative_pct": -9.99
+      },
+      "ltv_to_cac": {
+        "absolute": 3.47,
+        "relative_pct": 45.54
+      },
+      "marketing_roi": {
+        "absolute": 0.7449,
+        "relative_pct": 100.89
+      },
+      "marketing_spend": {
+        "absolute": 8750.0,
+        "relative_pct": 5.0
+      },
+      "modeled_revenue": {
+        "absolute": 194976.24,
+        "relative_pct": 49.99
+      },
+      "modeled_wins": {
+        "absolute": 2.57,
+        "relative_pct": 42.83
+      },
+      "sales_velocity_per_day": {
+        "absolute": 3343.71,
+        "relative_pct": 66.66
+      },
+      "target_attainment": {
+        "absolute": 0.2437,
+        "relative_pct": 49.99
+      }
+    },
+    "inputs": {
+      "acv_change_pct": 5.0,
+      "conversion_lift_pct": 8.0,
+      "cycle_change_pct": -10.0,
+      "marketing_spend_change_pct": 5.0,
+      "name": "Focused efficiency"
+    },
+    "modeled": {
+      "acv": 68250.0,
+      "attributed_gross_profit": 456281.47,
+      "available": true,
+      "blended_cac": 34272.23,
+      "cac_payback_months": 7.73,
+      "cycle_days": 69.98,
+      "estimated_ltv": 380250.0,
+      "ltv_to_cac": 11.09,
+      "marketing_roi": 1.4832,
+      "marketing_roi_unavailable_reason": null,
+      "marketing_spend": 183750.0,
+      "modeled_opportunities": 26.45,
+      "modeled_revenue": 584976.24,
+      "modeled_win_rate": 0.324,
+      "modeled_wins": 8.57,
+      "sales_velocity_per_day": 8359.79,
+      "stage_conversions": [
+        {
+          "from": "Lead",
+          "modeled_conversion": 0.432,
+          "to": "MQL"
+        },
+        {
+          "from": "MQL",
+          "modeled_conversion": 0.54,
+          "to": "SQL"
+        },
+        {
+          "from": "SQL",
+          "modeled_conversion": 0.27,
+          "to": "Opportunity"
+        },
+        {
+          "from": "Opportunity",
+          "modeled_conversion": 0.324,
+          "to": "Won"
+        }
+      ],
+      "stage_counts": [
+        {
+          "modeled_count": 420.0,
+          "stage": "Lead"
+        },
+        {
+          "modeled_count": 181.44,
+          "stage": "MQL"
+        },
+        {
+          "modeled_count": 97.98,
+          "stage": "SQL"
+        },
+        {
+          "modeled_count": 26.45,
+          "stage": "Opportunity"
+        },
+        {
+          "modeled_count": 8.57,
+          "stage": "Won"
+        }
+      ],
+      "target_attainment": 0.7312
+    },
+    "name": "Focused efficiency"
+  }
+}

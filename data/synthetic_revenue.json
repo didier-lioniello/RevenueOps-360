@@ -1,0 +1,59 @@
+{
+  "metadata": {
+    "dataset_id": "synthetic-b2b-revenue-v1",
+    "label": "SYNTHETIC DATA — fictional B2B revenue operations demonstration",
+    "synthetic": true,
+    "currency": "EUR",
+    "period_start": "2025-01-01",
+    "period_end": "2025-12-31",
+    "revenue_target": 800000,
+    "pipeline_coverage_target": 3.0
+  },
+  "funnel": [
+    {"stage": "Lead", "count": 400},
+    {"stage": "MQL", "count": 160},
+    {"stage": "SQL", "count": 80},
+    {"stage": "Opportunity", "count": 20},
+    {"stage": "Won", "count": 6}
+  ],
+  "opportunities": [
+    {"id": "SYN-OPP-001", "created_date": "2025-01-03", "close_date": "2025-03-03", "status": "won", "stage": "Closed Won", "acv": 48000, "forecast_category": "closed", "probability": 1.0, "marketing_source": "Paid Search"},
+    {"id": "SYN-OPP-002", "created_date": "2025-01-12", "close_date": "2025-03-28", "status": "won", "stage": "Closed Won", "acv": 60000, "forecast_category": "closed", "probability": 1.0, "marketing_source": "Content"},
+    {"id": "SYN-OPP-003", "created_date": "2025-02-01", "close_date": "2025-04-22", "status": "won", "stage": "Closed Won", "acv": 72000, "forecast_category": "closed", "probability": 1.0, "marketing_source": "Paid Search"},
+    {"id": "SYN-OPP-004", "created_date": "2025-02-20", "close_date": "2025-05-01", "status": "won", "stage": "Closed Won", "acv": 54000, "forecast_category": "closed", "probability": 1.0, "marketing_source": "Content"},
+    {"id": "SYN-OPP-005", "created_date": "2025-03-04", "close_date": "2025-06-02", "status": "won", "stage": "Closed Won", "acv": 66000, "forecast_category": "closed", "probability": 1.0, "marketing_source": "Events"},
+    {"id": "SYN-OPP-006", "created_date": "2025-04-01", "close_date": "2025-06-05", "status": "won", "stage": "Closed Won", "acv": 90000, "forecast_category": "closed", "probability": 1.0, "marketing_source": "Partners"},
+    {"id": "SYN-OPP-007", "created_date": "2025-01-08", "close_date": "2025-02-27", "status": "lost", "stage": "Closed Lost", "acv": 42000, "forecast_category": "closed", "probability": 0.0, "marketing_source": "Paid Search"},
+    {"id": "SYN-OPP-008", "created_date": "2025-01-20", "close_date": "2025-03-06", "status": "lost", "stage": "Closed Lost", "acv": 58000, "forecast_category": "closed", "probability": 0.0, "marketing_source": "Content"},
+    {"id": "SYN-OPP-009", "created_date": "2025-01-10", "close_date": "2025-04-30", "status": "lost", "stage": "Closed Lost", "acv": 76000, "forecast_category": "closed", "probability": 0.0, "marketing_source": "Events"},
+    {"id": "SYN-OPP-010", "created_date": "2025-02-01", "close_date": "2025-06-11", "status": "lost", "stage": "Closed Lost", "acv": 88000, "forecast_category": "closed", "probability": 0.0, "marketing_source": "Partners"},
+    {"id": "SYN-OPP-011", "created_date": "2025-03-10", "close_date": "2025-05-19", "status": "lost", "stage": "Closed Lost", "acv": 51000, "forecast_category": "closed", "probability": 0.0, "marketing_source": "Paid Search"},
+    {"id": "SYN-OPP-012", "created_date": "2025-04-05", "close_date": "2025-06-29", "status": "lost", "stage": "Closed Lost", "acv": 64000, "forecast_category": "closed", "probability": 0.0, "marketing_source": "Content"},
+    {"id": "SYN-OPP-013", "created_date": "2025-05-01", "close_date": "2025-06-30", "status": "lost", "stage": "Closed Lost", "acv": 47000, "forecast_category": "closed", "probability": 0.0, "marketing_source": "Events"},
+    {"id": "SYN-OPP-014", "created_date": "2025-05-15", "close_date": "2025-08-18", "status": "lost", "stage": "Closed Lost", "acv": 82000, "forecast_category": "closed", "probability": 0.0, "marketing_source": "Partners"},
+    {"id": "SYN-OPP-015", "created_date": "2025-06-01", "close_date": "2025-09-14", "status": "lost", "stage": "Closed Lost", "acv": 69000, "forecast_category": "closed", "probability": 0.0, "marketing_source": "Paid Search"},
+    {"id": "SYN-OPP-016", "created_date": "2025-07-01", "close_date": "2025-08-25", "status": "lost", "stage": "Closed Lost", "acv": 55000, "forecast_category": "closed", "probability": 0.0, "marketing_source": "Content"},
+    {"id": "SYN-OPP-017", "created_date": "2025-08-01", "expected_close_date": "2025-11-15", "status": "open", "stage": "Negotiation", "acv": 120000, "forecast_category": "commit", "probability": 0.85, "marketing_source": "Paid Search"},
+    {"id": "SYN-OPP-018", "created_date": "2025-08-20", "expected_close_date": "2025-12-01", "status": "open", "stage": "Proposal", "acv": 95000, "forecast_category": "commit", "probability": 0.75, "marketing_source": "Partners"},
+    {"id": "SYN-OPP-019", "created_date": "2025-09-01", "expected_close_date": "2025-12-15", "status": "open", "stage": "Discovery", "acv": 80000, "forecast_category": "best_case", "probability": 0.55, "marketing_source": "Content"},
+    {"id": "SYN-OPP-020", "created_date": "2025-10-01", "expected_close_date": "2026-01-15", "status": "open", "stage": "Qualification", "acv": 70000, "forecast_category": "pipeline", "probability": 0.30, "marketing_source": "Events"}
+  ],
+  "marketing_channels": [
+    {"channel": "Paid Search", "spend": 50000, "leads": 130},
+    {"channel": "Content", "spend": 35000, "leads": 120},
+    {"channel": "Events", "spend": 60000, "leads": 80},
+    {"channel": "Partners", "spend": 30000, "leads": 70}
+  ],
+  "unit_economics": {
+    "sales_acquisition_spend": 110000,
+    "gross_margin_rate": 0.78,
+    "annual_logo_churn_rate": 0.14
+  },
+  "default_scenario": {
+    "name": "Focused efficiency",
+    "conversion_lift_pct": 8.0,
+    "acv_change_pct": 5.0,
+    "cycle_change_pct": -10.0,
+    "marketing_spend_change_pct": 5.0
+  }
+}

@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools==83.0.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "revenueops-360"
+version = "0.1.0"
+description = "Deterministic RevenueOps analytics on operator-attested synthetic B2B data"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+keywords = ["revenue-operations", "forecasting", "synthetic-data"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+]
+dependencies = []
+
+[project.scripts]
+revenueops = "revenueops.cli:main"
+
+[project.urls]
+Homepage = "https://didier-lioniello.github.io/RevenueOps-360/"
+Repository = "https://github.com/didier-lioniello/RevenueOps-360"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+include = ["revenueops*"]
+
+[tool.setuptools.package-data]
+revenueops = ["web/*.html", "web/*.css", "web/*.js"]
+
+[tool.pytest.ini_options]
+addopts = "-ra"
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]

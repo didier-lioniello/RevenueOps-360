@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#08131f">
+    <meta name="description" content="Synthetic RevenueOps-360 analytics demonstration">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'none'; form-action 'none'">
+    <title>RevenueOps-360 · Synthetic Revenue Command Center</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="synthetic-banner" role="status">
+      SYNTHETIC ATTESTATION · DEMONSTRATION ONLY · NO PII DETECTION
+    </div>
+
+    <header class="hero shell">
+      <nav class="nav" aria-label="Dashboard sections">
+        <a class="brand" href="#top" aria-label="RevenueOps-360 home">
+          <span class="brand-mark">R360</span>
+          <span>RevenueOps-360</span>
+        </a>
+        <div class="nav-links">
+          <a href="#funnel">Funnel</a>
+          <a href="#forecast">Forecast</a>
+          <a href="#scenario">Scenario</a>
+          <a href="#actions">Actions</a>
+        </div>
+      </nav>
+
+      <div class="hero-grid" id="top">
+        <div>
+          <p class="eyebrow">Revenue decision system · reference implementation</p>
+          <h1>One view from demand<br>to durable growth.</h1>
+          <p class="hero-copy">
+            A deterministic B2B revenue model connecting funnel conversion, sales velocity,
+            forecast, attribution, unit economics, and transparent what-if analysis.
+          </p>
+          <div class="trust-row" aria-label="System properties">
+            <span>Synthetic attestation</span>
+            <span>No LLM</span>
+            <span>Reproducible</span>
+            <span>Rule-traced</span>
+          </div>
+        </div>
+        <aside class="hero-panel" aria-label="Dataset summary">
+          <span class="pulse"></span>
+          <p class="panel-label">Analysis snapshot</p>
+          <strong id="period">—</strong>
+          <p id="dataset-label">—</p>
+          <div class="target-line">
+            <span>Revenue target</span>
+            <strong id="target">—</strong>
+          </div>
+        </aside>
+      </div>
+    </header>
+
+    <main class="shell">
+      <section class="kpi-grid" id="scorecard" aria-label="Executive scorecard"></section>
+
+      <section class="section split" id="funnel">
+        <div>
+          <p class="eyebrow">Demand to revenue</p>
+          <h2>Funnel integrity</h2>
+          <p class="section-copy">Every bar is backed by the validated, operator-attested cohort.</p>
+        </div>
+        <div class="card chart-card" id="funnel-chart" aria-label="Funnel conversion chart"></div>
+      </section>
+
+      <section class="section" id="forecast">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">CRO control plane</p>
+            <h2>Forecast range & pipeline risk</h2>
+          </div>
+          <p class="section-copy">Actual, category views, and weighted exposure use in-period deals only.</p>
+        </div>
+        <div class="two-column">
+          <div class="card chart-card" id="forecast-chart" aria-label="Forecast comparison chart"></div>
+          <div class="card coverage-card" id="coverage-card"></div>
+        </div>
+      </section>
+
+      <section class="section" id="marketing">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Digital growth efficiency</p>
+            <h2>Attribution & channel economics</h2>
+          </div>
+          <p class="section-copy">Synthetic first-touch attribution with gross-margin-adjusted ROI.</p>
+        </div>
+        <div class="channel-grid" id="channel-grid"></div>
+      </section>
+
+      <section class="section scenario-section" id="scenario">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Scaling sensitivity</p>
+            <h2>Baseline vs modeled scenario</h2>
+          </div>
+          <div class="scenario-inputs" id="scenario-inputs"></div>
+        </div>
+        <div class="card scenario-card">
+          <div class="scenario-note">
+            <strong id="scenario-name">—</strong>
+            <span>Arithmetic sensitivity, not a prediction</span>
+          </div>
+          <div id="scenario-comparison" class="scenario-comparison"></div>
+        </div>
+      </section>
+
+      <section class="section" id="actions">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Traceable decisions</p>
+            <h2>Rules → evidence → testable action</h2>
+          </div>
+          <p class="section-copy">No generated advice. Every recommendation exposes its rule and source path.</p>
+        </div>
+        <div class="recommendation-grid" id="recommendations"></div>
+      </section>
+
+      <section class="section methodology" id="methodology">
+        <div>
+          <p class="eyebrow">Boundaries</p>
+          <h2>What this demo does not claim</h2>
+        </div>
+        <ul id="disclaimers"></ul>
+      </section>
+    </main>
+
+    <footer class="footer shell">
+      <span>RevenueOps-360</span>
+      <span>Deterministic Python · static HTML/CSS/JS · MIT</span>
+    </footer>
+
+    <noscript>This dashboard requires local JavaScript to render the embedded synthetic report.</noscript>
+    <template id="report-data">{{REPORT_JSON}}</template>
+    <script src="app.js" defer></script>
+  </body>
+</html>
