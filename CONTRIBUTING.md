@@ -8,19 +8,27 @@ welcome.
 ```bash
 python -m venv .venv
 source .venv/bin/activate
-python -m pip install --require-hashes -r requirements-lock.txt
+python -m pip install --require-hashes -r requirements-dev.txt
 python -m ruff check .
 python -m ruff format --check .
 python -m pytest
 python -m build --wheel --no-isolation
-python -m pip_audit -r requirements-lock.txt --strict
+python -m pip_audit -r requirements-dev.txt --strict
 python -m revenueops build-site --output-dir docs
 git diff --exit-code -- docs
 ```
 
 When a development dependency changes, edit `requirements-dev.in` and regenerate the checked-in
-lock with the exact command recorded at the top of `requirements-lock.txt`. Install and audit only
+lock with the exact command recorded at the top of `requirements-dev.txt`. Install and audit only
 the generated lock.
+
+```bash
+pip-compile --allow-unsafe --generate-hashes --resolver=backtracking --strip-extras \
+  --output-file=requirements-dev.txt requirements-dev.in
+```
+
+The conventional `.in`/`.txt` pair lets Dependabot update the direct constraint and compiled lock
+in the same pull request. CI recompiles the lock and rejects any drift.
 
 ## Pull requests
 

@@ -176,14 +176,14 @@ long cycle review, low channel ROI, and unit-economics review thresholds.
 Reproduce the current evidence locally:
 
 ```bash
-python -m pip install --require-hashes -r requirements-lock.txt
+python -m pip install --require-hashes -r requirements-dev.txt
 python -m ruff check .
 python -m ruff format --check .
 python -m pytest
 python -m build --wheel --no-isolation
 python -m revenueops build-site --output-dir docs
 git diff --exit-code -- docs
-python -m pip_audit -r requirements-lock.txt --strict
+python -m pip_audit -r requirements-dev.txt --strict
 actionlint
 ```
 
@@ -205,7 +205,7 @@ least-privilege Pages workflow rebuilds and diff-verifies `docs/` before deployi
 data/                       explicitly labeled synthetic input
 pyproject.toml              installable package and console-script metadata
 requirements-dev.in         direct development constraints for lock generation
-requirements-lock.txt       hash-locked Python 3.11/3.12 CI toolchain
+requirements-dev.txt        pip-compile hash lock for the Python 3.11/3.12 CI toolchain
 revenueops/models.py        validation and typed records
 revenueops/analytics.py     funnel, sales, forecast, attribution, unit economics
 revenueops/scenario.py      baseline and modeled sensitivity comparison
